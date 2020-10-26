@@ -42,11 +42,11 @@ My vaccine web app is a website that allows the users to keep track of their vac
  2- We need to install Node js https://nodejs.org/en/download/.
 
  3-  Setup the needed node modules for the project.
-   - In Terminal we locate us in the path of the project folder $ /myvaccine.
+   - In Terminal we locate us in the path of the project folder $ /My-vaccine-main.
    - I have already written the needed modules in package.json file, therefore just type( npm install ).
 
  4- Setup our database:
-  - In Terminal we locate us in the path of the project folder $ /myvaccine/sql
+  - In Terminal we locate us in the path of the project folder $ /My-vaccine-main/sql
   - Log into the database by using (mysql -uroot -p) or for Linux (sudo mysql -uroot -p) and entering the root password(which you have chosen in the MySQL installation).
      - Create our database and new user of the database by typing ( source setup.sql ).
      - Create our tables in the database by typing ( source insert.sql ).
