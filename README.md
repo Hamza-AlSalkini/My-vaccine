@@ -53,7 +53,7 @@ My vaccine web app is a website that allows the users to keep track of their vac
      - Type Exit.
      
  5- Running the app:
-   - In the terminal, we locate us in the path of the project folder $ /myvaccine.
+   - In the terminal, we locate us in the path of the project folder $ /My-vaccine-main.
        - Type the following command: npm run dev.
          - This will start the app in the address( http://localhost:1337 ).
 
