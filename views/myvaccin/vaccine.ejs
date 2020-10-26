@@ -1,0 +1,91 @@
+<%- include("header"); %>
+    <div class="sidebar-container">
+        <div class="sidebar-logo">
+            My vaccine
+        </div>
+        <ul class="sidebar-navigation">
+            <li class="header">Menu</li>
+            <li>
+                <a href="/admin-dashboard">
+                    <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+                </a>
+            </li>
+            <li class="header">Another Menu</li>
+            <li>
+                <a href="/users">
+                    <i class="fa fa-users" aria-hidden="true"></i> Users
+                </a>
+            </li>
+            <li>
+                <a href="/vaccine">
+                    <i class="fa fa-heartbeat" aria-hidden="true"></i> Vaccine
+                </a>
+            </li>
+            <li>
+                <a href="/logout">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i> sign out
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content-container">
+
+        <div class="container-fluid">
+
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron">
+                <h1>Overview of vaccines</h1>
+            </div>
+            <div class="table-responsive">
+                <%
+            if(res1 == 0){ %>
+                    <h3> There are no vaccination.</h3>
+                    <% }
+                else { %>
+                        <table class="table table-bordered" style="width: 100%;">
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Vaccine</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Recommendation</th>
+                                <th scope="col">Duration(day)</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                            <% for (const row of res1) { %>
+                                <tr>
+                                    <td>
+                                        <%= row.id %>
+                                    </td>
+                                    <td>
+                                        <%= row.vaccine %>
+                                    </td>
+                                    <td>
+                                        <%= row.description %>
+                                    </td>
+                                    <td>
+                                        <%= row.recommendation %>
+                                    </td>
+                                    <td>
+                                        <%= row.duration %>
+                                    </td>
+
+                                    <td>
+                                        <a href="/vaccine-edit/<%= row.id %>">
+                                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                        </a>
+                                        <a href="/vaccine-delete/<%= row.id %>">
+                                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <% }; %>
+                        </table>
+                        <%} %>
+            </div>
+            <a href="/vaccine-add">
+                <p class="btn btn-primary">Add vaccine</p>
+            </a>
+
+        </div>
+    </div>

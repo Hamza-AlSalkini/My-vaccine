@@ -1,0 +1,69 @@
+<%- include("header"); %>
+    <div class="sidebar-container">
+        <div class="sidebar-logo">
+            My vaccine
+        </div>
+        <ul class="sidebar-navigation">
+            <li class="header">Menu</li>
+            <li>
+                <a href="/admin-dashboard">
+                    <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+                </a>
+            </li>
+            <li class="header">Another Menu</li>
+            <li>
+                <a href="/users">
+                    <i class="fa fa-users" aria-hidden="true"></i> Users
+                </a>
+            </li>
+            <li>
+                <a href="/vaccine">
+                    <i class="fa fa-heartbeat" aria-hidden="true"></i> Vaccine
+                </a>
+            </li>
+            <li>
+                <a href="/logout">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i> sign out
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="content-container">
+
+        <div class="container-fluid">
+
+            <!-- Main component for a primary marketing message or call to action -->
+            <!-- <div class="jumbotron">
+            <h1>Here you can find information about vaccines</h1>
+          </div> -->
+            <% res1 = res1[0] %>
+                <form method="post" action="/vaccine-delete">
+                    <legend>Deleting Vaccine</legend>
+                    <div class="form-group">
+                        <label for="id">Id:</label>
+                        <input id="id" type="number" class="form-control" name="id" readonly value="<%= res1.id %>"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="vaccine">Vaccine:</label>
+                        <input id="vaccine" type="text" class="form-control" name="vaccine" readonly value="<%= res1.vaccine %>"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <input id="description" type="text" class="form-control" name="description" readonly value="<%= res1.description %>"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="recommendation">Recommendation:</label>
+                        <input id="recommendation" type="text" class="form-control" name="recommendation" readonly value="<%= res1.recommendation %>"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="duration">Duration:</label>
+                        <input id="duration" type="number" class="form-control" name="duration" readonly value="<%= res1.duration %>"><br>
+                    </div>
+                    <br><input class="btn btn-primary" type="submit" name="doit" value="Delete">
+
+                </form>
+
+        </div>
+    </div>

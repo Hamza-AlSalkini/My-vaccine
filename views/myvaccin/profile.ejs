@@ -1,0 +1,117 @@
+<%- include("header"); %>
+    <div class="sidebar-container">
+        <div class="sidebar-logo">
+            My vaccine
+        </div>
+        <ul class="sidebar-navigation">
+            <li class="header">Menu</li>
+            <li>
+                <a href="/profile">
+                    <i class="fa fa-user-circle" aria-hidden="true"></i> Dashboard
+                </a>
+            </li>
+            <li class="header">Another Menu</li>
+            <li>
+                <a href="/family-members">
+                    <i class="fa fa-users" aria-hidden="true"></i> Family members
+                </a>
+            </li>
+            <li>
+                <a href="/vaccine-user">
+                    <i class="fa fa-heartbeat" aria-hidden="true"></i> Vaccine
+                </a>
+            </li>
+            <li>
+                <a href="/add-vaccine-user">
+                    <i class="fa fa-plus" aria-hidden="true"></i> Register vaccine
+                </a>
+            </li>
+            <li>
+                <a href="/show-vaccine-log">
+                    <i class="fa fa-id-card-o" aria-hidden="true"></i> Vaccinate log
+                </a>
+            </li>
+            <li>
+                <a href="/user-settings">
+                    <i class="fa fa-cog" aria-hidden="true"></i> Settings
+                </a>
+            </li>
+            <li>
+                <a href="/logout">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i> sign out
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content-container">
+
+        <div class="container-fluid">
+
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron">
+                <h1>Welcome</h1>
+                <h3>
+                    <%= user.firstName  %>
+                        <%= user.secondName%>
+                </h3>
+                <p></p>
+                <p></p>
+            </div>
+            <%
+            if(res1 == 0){ %>
+                <h3> There are no remainders.</h3>
+                <% }
+                else { %>
+
+                    <h3>Remainders</h3>
+
+                    <table class="table table-bordered">
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Vaccine</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Vaccinate day</th>
+                            <th scope="col">Valied until</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                        <% for (const row of res1) { %>
+                            <%
+                            if(nowDate >= row.valid){ %>
+                                <tr>
+                                    <td>
+                                        <%= row.name %>
+                                    </td>
+                                    <td>
+                                        <%= row.vaccine %>
+                                    </td>
+                                    <td>
+                                        <%= row.description %>
+                                    </td>
+                                    <td>
+                                        <%= row.date %>
+                                    </td>
+                                    <td>
+                                        <%= row.valid %>
+                                    </td>
+                                    <td>
+                                        <%
+                            if(nowDate >= row.valid){ %>
+                                            Expired
+                                            <%
+                            }
+                            else{ %>
+                                                Active
+                                                <%
+                            }
+                            %>
+                                    </td>
+                                </tr>
+                                <%
+                        }
+            %>
+                                    <% }; %>
+                    </table>
+                    <%} %>
+        </div>
+    </div>

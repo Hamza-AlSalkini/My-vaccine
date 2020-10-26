@@ -1,0 +1,77 @@
+<%- include("header"); %>
+    <div class="sidebar-container">
+        <div class="sidebar-logo">
+            My vaccine
+        </div>
+        <ul class="sidebar-navigation">
+            <li class="header">Menu</li>
+            <li>
+                <a href="/profile">
+                    <i class="fa fa-user-circle" aria-hidden="true"></i> Dashboard
+                </a>
+            </li>
+            <li class="header">Another Menu</li>
+            <li>
+                <a href="/family-members">
+                    <i class="fa fa-users" aria-hidden="true"></i> Family members
+                </a>
+            </li>
+            <li>
+                <a href="/vaccine-user">
+                    <i class="fa fa-heartbeat" aria-hidden="true"></i> Vaccine
+                </a>
+            </li>
+            <li>
+                <a href="/add-vaccine-user">
+                    <i class="fa fa-plus" aria-hidden="true"></i> Register vaccine
+                </a>
+            </li>
+            <li>
+                <a href="/show-vaccine-log">
+                    <i class="fa fa-id-card-o" aria-hidden="true"></i> Vaccinate log
+                </a>
+            </li>
+            <li>
+                <a href="/user-settings">
+                    <i class="fa fa-cog" aria-hidden="true"></i> Settings
+                </a>
+            </li>
+            <li>
+                <a href="/logout">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i> sign out
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="content-container">
+
+        <div class="container-fluid">
+            <% res1 = res1[0] %>
+                <form method="post" action="/vaccine-log-delete">
+                    <legend>Delete a vaccine for
+                        <%= res1.name %>
+                    </legend>
+                    <div class="form-group">
+                        <label for="id">Id:</label>
+                        <input id="id" type="number" class="form-control" name="id" readonly value="<%= res1.id %>"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input id="name" type="text" class="form-control" name="name" readonly value="<%= res1.name %>"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="vaccine">Vaccine:</label>
+                        <input id="vaccine" type="text" class="form-control" name="vaccine" readonly value="<%= res1.vaccine %>"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date:</label>
+                        <input id="date" type="date" class="form-control" name="date" readonly value="<%= res1.date %>"><br>
+                    </div>
+                    <br><input type="submit" class="btn btn-primary" name="doit" value="Delete">
+
+                </form>
+
+        </div>
+    </div>

@@ -1,0 +1,58 @@
+<%- include("header"); %>
+    <div class="sidebar-container">
+        <div class="sidebar-logo">
+            My vaccine
+        </div>
+        <ul class="sidebar-navigation">
+            <li class="header">Menu</li>
+            <li>
+                <a href="/admin-dashboard">
+                    <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+                </a>
+            </li>
+            <li class="header">Another Menu</li>
+            <li>
+                <a href="/users">
+                    <i class="fa fa-users" aria-hidden="true"></i> Users
+                </a>
+            </li>
+            <li>
+                <a href="/vaccine">
+                    <i class="fa fa-heartbeat" aria-hidden="true"></i> Vaccine
+                </a>
+            </li>
+            <li>
+                <a href="/logout">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i> sign out
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="content-container">
+
+        <div class="container-fluid">
+            <form method="post" action="/vaccine-add">
+                <legend>Add Vaccine</legend>
+                <div class="form-group">
+                    <label for="vaccine">Vaccine:</label>
+                    <input id="vaccine" type="text" class="form-control" name="vaccine" required><br>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <input id="description" type="text" class="form-control" name="description" required><br>
+                </div>
+                <div class="form-group">
+                    <label for="recommendation">Recommendation:</label>
+                    <input id="recommendation" type="text" class="form-control" name="recommendation" required><br>
+                </div>
+                <div class="form-group">
+                    <label for="duration">Duration(day ex. 10):</label>
+                    <input id="duration" type="number" class="form-control" name="duration" required><br>
+                </div>
+                <br><input class="btn btn-primary" type="submit" name="doit" value="Add">
+            </form>
+
+        </div>
+    </div>

@@ -1,0 +1,101 @@
+<%- include("header"); %>
+    <div class="sidebar-container">
+        <div class="sidebar-logo">
+            My vaccine
+        </div>
+        <ul class="sidebar-navigation">
+            <li class="header">Menu</li>
+            <li>
+                <a href="/admin-dashboard">
+                    <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+                </a>
+            </li>
+            <li class="header">Another Menu</li>
+            <li>
+                <a href="/users">
+                    <i class="fa fa-users" aria-hidden="true"></i> Users
+                </a>
+            </li>
+            <li>
+                <a href="/vaccine">
+                    <i class="fa fa-heartbeat" aria-hidden="true"></i> Vaccine
+                </a>
+            </li>
+            <li>
+                <a href="/logout">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i> sign out
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content-container">
+
+        <div class="container-fluid">
+
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron">
+                <h1>Overview of users</h1>
+            </div>
+            <div class="table-responsive">
+                <%
+                if(res1 == 0){ %>
+                    <h3> There are no users in the system.</h3>
+                    <% }
+                    else { %>
+                        <table class="table table-bordered" style="max-width: 100%">
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Password</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Date of birth</th>
+                                <th scope="col">Gender</th>
+                                <th scope="col">Mobile</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Post</th>
+
+                            </tr>
+                            <% for (const row of res1) { %>
+                                <tr>
+                                    <td>
+                                        <%= row.id %>
+                                    </td>
+                                    <td>
+                                        <%= row.username %>
+                                    </td>
+                                    <td>
+                                        <%= row.password %>
+                                    </td>
+                                    <td>
+                                        <%= row.firstName  %>
+                                            <%= row.secondName %>
+                                    </td>
+                                    <td>
+                                        <%= row.dateOfBirth %>
+                                    </td>
+                                    <td>
+                                        <%= row.gender %>
+                                    </td>
+                                    <td>
+                                        <%= row.mobile %>
+                                    </td>
+                                    <td>
+                                        <%= row.address %>
+                                    </td>
+                                    <td>
+                                        <%= row.post %>
+                                    </td>
+                                    <td>
+                                        <a href="/user-delete/<%= row.id %>">
+                                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <% }; %>
+                        </table>
+                        <%} %>
+            </div>
+
+        </div>
+    </div>

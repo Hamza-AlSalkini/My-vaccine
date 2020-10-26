@@ -1,0 +1,85 @@
+<%- include("header"); %>
+    <div class="sidebar-container">
+        <div class="sidebar-logo">
+            My vaccine
+        </div>
+        <ul class="sidebar-navigation">
+            <li class="header">Menu</li>
+            <li>
+                <a href="/admin-dashboard">
+                    <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+                </a>
+            </li>
+            <li class="header">Another Menu</li>
+            <li>
+                <a href="/vaccine">
+                    <i class="fa fa-heartbeat" aria-hidden="true"></i> Vaccine
+                </a>
+            </li>
+            <li>
+                <a href="/users">
+                    <i class="fa fa-users" aria-hidden="true"></i> Users
+                </a>
+            </li>
+            <li>
+                <a href="/logout">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i> sign out
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="content-container">
+
+        <div class="container-fluid">
+
+            <!-- Main component for a primary marketing message or call to action -->
+            <!-- <div class="jumbotron">
+            <h1>Here you can find information about vaccines</h1>
+          </div> -->
+            <% res1 = res1[0] %>
+                <form method="post" action="/user-delete">
+                    <legend>Deleting User</legend>
+                    <div class="form-group">
+                        <label for="id">Id:</label>
+                        <input id="id" type="number" class="form-control" name="id" readonly value="<%= res1.id %>"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input id="username" type="text" class="form-control" name="username" readonly value="<%= res1.username %>"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input id="password" type="text" class="form-control" name="password" readonly value="<%= res1.password %>"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="Name">Name:</label>
+                        <input id="Name" type="text" class="form-control" name="Name" readonly value="<%= res1.firstName %> <%= res1.secondName %>"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="date of birth">Date Of Birth:</label>
+                        <input id="date of birth" type="date" class="form-control" name="date of birth" readonly value="<%= res1.dateOfBirth %>"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">gender:</label>
+                        <input id="gender" type="text" class="form-control" name="gender" readonly value="<%= res1.gender %>"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile">Mobile:</label>
+                        <input id="mobile" type="text" class="form-control" name="mobile" readonly value="<%= res1.mobile %>"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address:</label>
+                        <input id="address" type="text" class="form-control" name="address" readonly value="<%= res1.address %>"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="post">Post:</label>
+                        <input id="post" type="text" class="form-control" name="post" readonly value="<%= res1.post %>"><br>
+                    </div>
+                    <br><input type="submit" class="btn btn-primary" name="doit" value="Delete">
+
+                </form>
+
+        </div>
+    </div>

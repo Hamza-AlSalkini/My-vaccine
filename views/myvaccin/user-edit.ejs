@@ -1,0 +1,80 @@
+<%- include("header"); %>
+    <div class="sidebar-container">
+        <div class="sidebar-logo">
+            My vaccine
+        </div>
+        <ul class="sidebar-navigation">
+            <li class="header">Menu</li>
+            <li>
+                <a href="/profile">
+                    <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+                </a>
+            </li>
+            <li class="header">Another Menu</li>
+            <li>
+                <a href="/user-edit">
+                    <i class="fa fa-id-card-o" aria-hidden="true"></i> Personal info
+                </a>
+            </li>
+            <li>
+                <a href="/logout">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i> sign out
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="content-container">
+
+        <div class="container-fluid">
+
+            <!-- Main component for a primary marketing message or call to action -->
+            <!-- <div class="jumbotron">
+            <h1>Here you can find information about vaccines</h1>
+          </div> -->
+            <% res1 = res1[0] %>
+                <form method="post" action="/user-edit">
+                    <legend>Editing user info</legend>
+                    <div class="form-group">
+                        <label for="id">Id:</label>
+                        <input id="id" type="number" class="form-control" name="id" readonly value="<%= res1.id %>"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input id="username" type="text" class="form-control" name="username" required value="<%= res1.username %>"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="firstName">First name:</label>
+                        <input id="firstName" type="text" class="form-control" name="firstName" required value="<%= res1.firstName %>"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="secondName">Second name:</label>
+                        <input id="secondName" type="text" class="form-control" name="secondName" required value="<%= res1.secondName %>"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="dateOfBirth">Date Of Birth:</label>
+                        <input id="dateOfBirth" type="date" class="form-control" name="dateOfBirth" required value="<%= res1.dateOfBirth %>"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">gender:</label>
+                        <input id="gender" type="text" class="form-control" name="gender" required value="<%= res1.gender %>"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile">Mobile:</label>
+                        <input id="mobile" type="text" class="form-control" name="mobile" required value="<%= res1.mobile %>"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address:</label>
+                        <input id="address" type="text" class="form-control" name="address" required value="<%= res1.address %>"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="post">Post:</label>
+                        <input id="post" type="text" class="form-control" name="post" required value="<%= res1.post %>"><br>
+                    </div>
+                    <br><input type="submit" class="btn btn-primary" name="doit" value="Edit">
+
+                </form>
+
+        </div>
+    </div>

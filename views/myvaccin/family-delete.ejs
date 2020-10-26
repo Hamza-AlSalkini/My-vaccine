@@ -1,0 +1,80 @@
+<%- include("header"); %>
+    <div class="sidebar-container">
+        <div class="sidebar-logo">
+            My vaccine
+        </div>
+        <ul class="sidebar-navigation">
+            <li class="header">Menu</li>
+            <li>
+                <a href="/profile">
+                    <i class="fa fa-user-circle" aria-hidden="true"></i> Dashboard
+                </a>
+            </li>
+            <li class="header">Another Menu</li>
+            <li>
+                <a href="/family-members">
+                    <i class="fa fa-users" aria-hidden="true"></i> Family members
+                </a>
+            </li>
+            <li>
+                <a href="/vaccine-user">
+                    <i class="fa fa-heartbeat" aria-hidden="true"></i> Vaccine
+                </a>
+            </li>
+            <li>
+                <a href="/add-vaccine-user">
+                    <i class="fa fa-plus" aria-hidden="true"></i> Register vaccine
+                </a>
+            </li>
+            <li>
+                <a href="/show-vaccine-log">
+                    <i class="fa fa-id-card-o" aria-hidden="true"></i> Vaccinate log
+                </a>
+            </li>
+            <li>
+                <a href="/user-settings">
+                    <i class="fa fa-cog" aria-hidden="true"></i> Settings
+                </a>
+            </li>
+            <li>
+                <a href="/logout">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i> sign out
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="content-container">
+
+        <div class="container-fluid">
+
+            <!-- Main component for a primary marketing message or call to action -->
+            <!-- <div class="jumbotron">
+            <h1>Here you can find information about vaccines</h1>
+          </div> -->
+            <% res1 = res1[0] %>
+                <form method="post" action="/family-delete">
+                    <legend>Delete a family member</legend>
+                    <div class="form-group">
+                        <label for="idf">Id:</label>
+                        <input id="idf" type="number" class="form-control" name="idf" readonly value="<%= res1.idf %>"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input id="name" type="text" class="form-control" name="name" value="<%= res1.name %>"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="dateofbirth">Date of birth:</label>
+                        <input id="dateofbirth" type="date" class="form-control" name="dateofbirth" value="<%= res1.dateofbirth %>"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender:</label>
+                        <input id="gender" type="text" class="form-control" name="gender" value="<%= res1.gender %>"><br>
+                    </div>
+                    <br><input type="submit" class="btn btn-primary" name="doit" value="Delete">
+
+                </form>
+
+        </div>
+    </div>
