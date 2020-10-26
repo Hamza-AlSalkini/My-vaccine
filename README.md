@@ -60,7 +60,7 @@ My vaccine web app is a website that allows the users to keep track of their vac
 To access Admin dashboard use the following:
 ```
 Username: admin@admin.com
-Password: Zolco123456**@@
+Password: zolaco123456**@@
 
 ```
 
