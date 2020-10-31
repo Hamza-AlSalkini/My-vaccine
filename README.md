@@ -1,7 +1,7 @@
 # My vaccine
 
 ## OVERVIEW
-My vaccine web app is a website that allows the users to keep track of their vaccin and get remainders when the vaccine is out of date.The app also allows users to register their family members.
+My vaccine web app is a website that allows the users to register their vaccinations and get reminders when the vaccine is expired..The app also allows users to register their family members.
 
 ## App functions
 
