@@ -35,6 +35,7 @@ My vaccine web app is a website that allows the users to register their vaccinat
      * Note in the installation you will choose a password for the root user( remember the password as we will need it to log in to the database in the terminal ).
 
      - sudo apt-get install mysql-server
+     - sudo service mysql start
      - sudo mysql_secure_installation
      - We can check the status of the server by (sudo service mysql status)
      - Now the server is working and we can log in to the database by typing (sudo mysql -uroot -p) and entering the root password.
@@ -43,7 +44,7 @@ My vaccine web app is a website that allows the users to register their vaccinat
 
  3-  Setup the needed node modules for the project.
    - In Terminal we locate us in the path of the project folder $ /My-vaccine-main.
-   - I have already written the needed modules in package.json file, therefore just type( npm install ).
+   - I have already written the needed modules in package.json file, therefore just type( sudo apt install npm ) then ( npm install ).
 
  4- Setup our database:
   - In Terminal we locate us in the path of the project folder $ /My-vaccine-main/sql
