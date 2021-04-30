@@ -34,7 +34,7 @@ My vaccine web app is a website that allows the users to register their vaccinat
      In Linux we use the following commands:
      * Note in the installation you will choose a password for the root user( remember the password as we will need it to log in to the database in the terminal ).
 
-     - sudo apt-get install MySQL-server
+     - sudo apt-get install mysql-server
      - sudo mysql_secure_installation
      - We can check the status of the server by (sudo service mysql status)
      - Now the server is working and we can log in to the database by typing (sudo mysql -uroot -p) and entering the root password.
