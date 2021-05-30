@@ -26,7 +26,7 @@ My vaccine web app is a website that allows the users to register their vaccinat
   
 
   ##  Installtions and setup.
-   This program was created using:
+   This web application was created using:
    MySQL, Node js, Bootstrap.
     
   1 - In the documentation of Mysql, we choose the appropriate operating system and follow the documentation  https://dev.mysql.com/doc/refman/8.0/en/installing.html
